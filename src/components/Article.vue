@@ -21,6 +21,8 @@
 <script>
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
 export default {
     
     data() {
@@ -33,7 +35,7 @@ export default {
         try {
             const articleId = this.$route.params.id;
 
-            const response = await axios.get(`http://localhost:5000/api/articles/${articleId}`);
+            const response = await axios.get(`${apiUrl}/api/articles/${articleId}`);
 
             this.article = response.data;
 

@@ -37,6 +37,8 @@
 <script>
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
 export default {
     data() {
         return {
@@ -71,7 +73,7 @@ export default {
 
         async submitSearch() {
             try {
-                const response = await axios.post("http://localhost:5000/api/search", {
+                const response = await axios.post(`${apiUrl}/api/search`, {
                     text: this.inputText
                 });
                 console.log('Response from server:', response.data);

@@ -24,6 +24,8 @@
   
   <script>
   import axios from 'axios';
+
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
   
   export default {
     data() {
@@ -36,7 +38,7 @@
     methods: {
       async login() {
         try {
-          const response = await axios.post('http://localhost:5000/login', {
+          const response = await axios.post(`${apiUrl}/login`, {
             username: this.username,
             password: this.password,
           });
