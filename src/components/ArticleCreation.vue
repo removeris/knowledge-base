@@ -24,6 +24,8 @@
   
   import axios from "axios";
 
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
   export default {
     data() {
       return {
@@ -72,7 +74,7 @@
           imageData.append('file', file);
 
           try {
-            const response = await axios.post("http://localhost:5000/api/upload", imageData, { headers: { "Content-Type": "multipart/form-data" }});
+            const response = await axios.post(`${apiUrl}/api/upload`, imageData, { headers: { "Content-Type": "multipart/form-data" }});
 
             const imageUrl = response.data.imageUrl;
 
@@ -99,7 +101,7 @@
         };
 
         try {
-          const response = await axios.post("http://localhost:5000/api/articles", articleData, { headers: { "Content-Type": "multipart/form-data" }});
+          const response = await axios.post(`${apiUrl}/api/articles`, articleData, { headers: { "Content-Type": "multipart/form-data" }});
           alert("Article was uploaded successfully.");
         }
         catch(error) {
