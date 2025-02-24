@@ -25,7 +25,7 @@
   <script>
   import axios from 'axios';
 
-  const apiUrl = import.meta.env.VITE_API_BASE_URL;
+  const apiUrl = import.meta.env.VUE_APP_API_BASE_URL;
   
   export default {
     data() {
