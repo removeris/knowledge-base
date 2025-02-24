@@ -37,6 +37,10 @@ export default {
   }
 }
 
+console.log("Environment Variables:", import.meta.env);
+console.log("API URL:", import.meta.env.VITE_API_BASE_URL);
+
+
 </script>
 
 <style>
