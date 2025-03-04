@@ -10,8 +10,6 @@ import ArticleCreation from '@/views/ArticleCreationView.vue'
 
 import LoginView from '@/views/LoginView.vue'
 
-import TempView from '@/views/Temp.vue'
-
 const routes = [
   { path: '/', name: 'home', component: HomeView, meta: { requiresAuth: true }},
 
@@ -23,8 +21,6 @@ const routes = [
   { path: '/screenshots', name: 'screenshots', component: AppScreenshots, meta: { requiresAuth: true }},
   
   { path: '/login', name:'Login', component: LoginView},
-
-  { path: '/temp', name: 'temp', component: TempView},
 ]
 
 const router = createRouter({

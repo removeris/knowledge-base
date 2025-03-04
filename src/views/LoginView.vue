@@ -4,14 +4,19 @@
 
       <div class="sub-container">
         <h1>To login, scan the <span class="colored-text">QR code </span>using your <span class="colored-text">myTU app.</span></h1>
-        <img id="qr-code" src="../assets/qr-code.png">
+        <qrcode id="qrcode"/>
       </div>
     </div>
   </template>
   
   <script>
+
+  import qrcode from "@/components/QRCode.vue"
+
   export default {
-    
+    components: {
+      qrcode
+    }
   };
   </script>
 
@@ -68,6 +73,11 @@
 
   .colored-text {
     color: rgba(42, 210, 201, 1);
+  }
+
+  #qrcode {
+    height: 300px;
+    width: 300px;
   }
 
 
